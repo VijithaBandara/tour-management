@@ -60,7 +60,7 @@ export const deleteTour = async (req,res) => {
 
     try{
 
-        await Tour.findByIdAndDelete(id);
+        const deleteTour = await Tour.findByIdAndDelete(id);
 
         res
         .status(200)

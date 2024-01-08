@@ -24,10 +24,9 @@ mongoose.set("strictQuery", false) // Disable strict mode for queries
 const connect = async()=>{
     try{
 
-        await mongoose.connect(process.env.PORT,{
-            useNewUrlParser:true,
-            useUnifiedTopology:true, //The useNewUrlParser option is set to true to avoid deprecation warnings related to the MongoDB driver. Similarly, useUnifiedTopology is set to true to use the new Server Discovery and Monitoring engine.
-        });
+        await mongoose.connect(process.env.MONGO_URL);
+        console.log('MongoDB database connected');
+
             
     } catch (err){
         console.log('MongoDB database connection failed');

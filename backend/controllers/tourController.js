@@ -1,7 +1,7 @@
-import Review from '../models/Review';
 import Tour from '../models/Tour'
 
-export const createTour = async (req,res) => {
+export const createTour = async (req, res) => {
+
     const newTour = new Tour(req.body);
 
     try{
@@ -60,7 +60,7 @@ export const deleteTour = async (req,res) => {
 
     try{
 
-        await Tour.findByIdAndUpdate(id);
+        await Tour.findByIdAndDelete(id);
 
         res
         .status(200)
